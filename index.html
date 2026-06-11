@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mehdi Miladi — Senior Business Analyst | Toronto, ON</title>
+  <meta name="description" content="Senior Business Analyst with 10+ years driving process transformation and data-driven service improvement. Open to opportunities in public sector, telecom, and technology.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0A1628;
+      --blue: #1D4ED8;
+      --orange: #F97316;
+      --white: #FFFFFF;
+      --off: #F8FAFC;
+      --text: #0F172A;
+      --muted: #64748B;
+      --bdr: #E2E8F0;
+    }
+    * { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--text); line-height: 1.6; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--navy);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem;
+      color: #fff; letter-spacing: 0.05em; text-decoration: none;
+    }
+    .nav-ul { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-ul a {
+      color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.79rem;
+      font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-ul a:hover { color: var(--orange); }
+    .nav-hire {
+      background: var(--orange); color: #fff !important;
+      padding: 0.38rem 0.95rem; border-radius: 4px;
+    }
+    .nav-hire:hover { opacity: 0.88; }
+    .nav-toggle {
+      display: none; background: none; border: none;
+      cursor: pointer; color: #fff; font-size: 1.5rem; line-height: 1;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      background: var(--navy);
+      padding: 5rem 2rem 6rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-grid-bg {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(29,78,216,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(29,78,216,0.07) 1px, transparent 1px);
+      background-size: 56px 56px;
+      pointer-events: none;
+    }
+    .hero-curve {
+      position: absolute; bottom: -1px; left: 0; right: 0; height: 64px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: inline-block;
+      width: 24px; height: 2px; background: var(--orange);
+    }
+    .hero-name {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+      color: #fff; line-height: 1; margin-bottom: 0.55rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-title {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      color: var(--blue); letter-spacing: 0.07em;
+      text-transform: uppercase; margin-bottom: 1.25rem;
+    }
+    .hero-desc {
+      color: rgba(255,255,255,0.58); font-size: 0.975rem;
+      line-height: 1.75; margin-bottom: 1.9rem; max-width: 450px;
+    }
+    .hero-btns { display: flex; gap: 0.875rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--orange); color: #fff;
+      padding: 0.8rem 1.6rem; border-radius: 4px;
+      font-weight: 600; font-size: 0.875rem;
+      text-decoration: none; border: none; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      letter-spacing: 0.02em;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(249,115,22,0.38); }
+    .btn-outline {
+      background: transparent; color: rgba(255,255,255,0.82);
+      padding: 0.8rem 1.6rem; border-radius: 4px;
+      font-weight: 600; font-size: 0.875rem;
+      text-decoration: none; border: 1.5px solid rgba(255,255,255,0.24); cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.06); }
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .stat-card {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px; padding: 1.3rem 1.2rem;
+      transition: background 0.2s;
+    }
+    .stat-card:hover { background: rgba(255,255,255,0.09); }
+    .stat-num {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: 2.2rem; color: #fff; line-height: 1; margin-bottom: 0.28rem;
+    }
+    .stat-num .suf { color: var(--orange); }
+    .stat-label {
+      font-size: 0.72rem; color: rgba(255,255,255,0.48);
+      text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500;
+    }
+
+    /* ── SHARED SECTION STYLES ── */
+    section { padding: 4.5rem 2rem; }
+    .container { max-width: 1080px; margin: 0 auto; }
+    .s-eyebrow {
+      font-size: 0.71rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 0.38rem;
+    }
+    .s-title {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      color: var(--text); line-height: 1.1;
+      margin-bottom: 2.5rem; letter-spacing: -0.02em;
+    }
+    .s-title span { color: var(--blue); }
+
+    /* ── ABOUT ── */
+    #about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 3.5rem; align-items: start; }
+    .about-text p { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 0.95rem; }
+    .about-text p strong { color: var(--text); font-weight: 600; }
+    .highlights { display: flex; flex-direction: column; gap: 0.85rem; }
+    .hl-item {
+      display: flex; align-items: center; gap: 0.85rem;
+      padding: 0.85rem 1rem; background: var(--off);
+      border-radius: 6px; border-left: 3px solid var(--blue);
+    }
+    .hl-icon {
+      width: 32px; height: 32px;
+      background: rgba(29,78,216,0.1); border-radius: 5px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue); font-size: 1rem; flex-shrink: 0;
+    }
+    .hl-title { font-size: 0.865rem; font-weight: 600; color: var(--text); }
+    .hl-sub { font-size: 0.775rem; color: var(--muted); margin-top: 1px; }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--off); }
+    .timeline { position: relative; padding-left: 1.75rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--blue) 0%, rgba(29,78,216,0.12) 100%);
+    }
+    .tl-item {
+      position: relative; padding-bottom: 2rem;
+      opacity: 0; transform: translateX(-16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .tl-item.visible { opacity: 1; transform: translateX(0); }
+    .tl-dot {
+      position: absolute; left: -2.2rem; top: 0.42rem;
+      width: 11px; height: 11px; border-radius: 50%;
+      background: var(--blue); border: 2px solid var(--off);
+      box-shadow: 0 0 0 3px rgba(29,78,216,0.18);
+    }
+    .exp-card {
+      background: var(--white); border-radius: 8px;
+      padding: 1.35rem 1.4rem;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s;
+    }
+    .exp-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
+    .exp-head {
+      display: flex; justify-content: space-between;
+      align-items: flex-start; gap: 0.5rem; flex-wrap: wrap;
+      margin-bottom: 0.28rem;
+    }
+    .exp-role { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text); }
+    .exp-dates {
+      font-size: 0.775rem; color: var(--muted);
+      background: var(--off); padding: 0.2rem 0.65rem;
+      border-radius: 20px; white-space: nowrap; font-weight: 500;
+    }
+    .exp-company { font-size: 0.84rem; color: var(--blue); font-weight: 500; margin-bottom: 0.6rem; }
+    .exp-desc { font-size: 0.84rem; color: var(--muted); font-style: italic; margin-bottom: 0.75rem; line-height: 1.6; }
+    .exp-ul { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+    .exp-ul li {
+      font-size: 0.84rem; color: var(--text); line-height: 1.6;
+      padding-left: 0.9rem; position: relative;
+    }
+    .exp-ul li::before {
+      content: ''; position: absolute; left: 0; top: 0.54em;
+      width: 4px; height: 4px; border-radius: 50%; background: var(--orange);
+    }
+    .exp-ul li strong { font-weight: 600; }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--white); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.75rem; }
+    .skill-group h3 {
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.82rem;
+      color: var(--text); text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 0.875rem; padding-bottom: 0.45rem;
+      border-bottom: 2px solid var(--blue);
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag {
+      background: var(--off); color: var(--text); font-size: 0.78rem; font-weight: 500;
+      padding: 0.3rem 0.65rem; border-radius: 4px; border: 1px solid var(--bdr);
+      cursor: default; transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .tag:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+    /* ── EDUCATION ── */
+    #education { background: var(--off); }
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 1.2rem; }
+    .edu-card {
+      background: var(--white); border-radius: 8px; padding: 1.35rem;
+      border-top: 3px solid var(--blue);
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+      opacity: 0; transform: translateY(14px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .edu-card.visible { opacity: 1; transform: translateY(0); }
+    .edu-type { font-size: 0.69rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--blue); margin-bottom: 0.38rem; }
+    .edu-degree { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.94rem; color: var(--text); margin-bottom: 0.22rem; line-height: 1.3; }
+    .edu-school { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.5rem; }
+    .edu-year {
+      font-size: 0.775rem; font-weight: 500; color: var(--muted);
+      background: var(--off); display: inline-block;
+      padding: 0.18rem 0.55rem; border-radius: 20px;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--navy); padding-bottom: 5rem; }
+    #contact .s-title { color: #fff; }
+    #contact .s-title span { color: var(--orange); }
+    #contact .s-eyebrow { color: var(--orange); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3.5rem; align-items: start; }
+    .c-info h3 { font-family: 'Syne', sans-serif; font-weight: 700; color: #fff; font-size: 1.15rem; margin-bottom: 0.7rem; }
+    .c-info p { color: rgba(255,255,255,0.53); font-size: 0.925rem; line-height: 1.75; margin-bottom: 1.75rem; }
+    .c-links { display: flex; flex-direction: column; gap: 0.65rem; }
+    .c-link {
+      display: flex; align-items: center; gap: 0.75rem;
+      color: rgba(255,255,255,0.68); font-size: 0.875rem;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .c-link:hover { color: var(--orange); }
+    .c-icon {
+      width: 34px; height: 34px;
+      background: rgba(255,255,255,0.07); border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.05rem; flex-shrink: 0; transition: background 0.2s;
+    }
+    .c-link:hover .c-icon { background: rgba(249,115,22,0.2); }
+    .c-form-wrap {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px; padding: 1.75rem;
+    }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label {
+      display: block; font-size: 0.73rem; font-weight: 500;
+      color: rgba(255,255,255,0.48); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-bottom: 0.35rem;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 4px; padding: 0.7rem 0.9rem;
+      color: #fff; font-size: 0.875rem;
+      font-family: 'Inter', sans-serif; outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.27); }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--blue); }
+    .form-group textarea { min-height: 115px; resize: vertical; }
+    .form-success { display: none; text-align: center; padding: 2rem 1rem; }
+    .form-success .ok { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .form-success h4 { font-family: 'Syne', sans-serif; color: #fff; font-size: 1.15rem; margin-bottom: 0.4rem; }
+    .form-success p { color: rgba(255,255,255,0.5); font-size: 0.875rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #060e1a; padding: 1.25rem 2rem;
+      text-align: center; color: rgba(255,255,255,0.25); font-size: 0.775rem;
+    }
+
+    /* ── REVEAL ANIMATION ── */
+    .rv { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .rv.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .nav-ul { display: none; flex-direction: column; gap: 0; position: absolute; top: 60px; left: 0; right: 0; background: var(--navy); padding: 1rem 2rem; border-top: 1px solid rgba(255,255,255,0.08); }
+      .nav-ul.open { display: flex; }
+      .nav-ul li { padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .nav-toggle { display: block; }
+      .hero-name { font-size: 2.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAV ══ -->
+  <nav>
+    <a href="#" class="nav-logo">MM</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-ul').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-ul">
+      <li><a href="#about" onclick="this.closest('.nav-ul').classList.remove('open')">About</a></li>
+      <li><a href="#experience" onclick="this.closest('.nav-ul').classList.remove('open')">Experience</a></li>
+      <li><a href="#skills" onclick="this.closest('.nav-ul').classList.remove('open')">Skills</a></li>
+      <li><a href="#education" onclick="this.closest('.nav-ul').classList.remove('open')">Education</a></li>
+      <li><a href="#contact" class="nav-hire" onclick="this.closest('.nav-ul').classList.remove('open')">Hire Me</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-inner">
+      <div>
+        <p class="hero-eyebrow">Available for Hire &middot; Toronto, ON</p>
+        <h1 class="hero-name">Mehdi<br>Miladi</h1>
+        <p class="hero-title">Senior Business Analyst</p>
+        <p class="hero-desc">Data-driven analyst with 10+ years delivering process transformation, Power BI intelligence, and cross-functional project leadership across high-volume service operations.</p>
+        <div class="hero-btns">
+          <a href="Miladi_Resume.pdf" class="btn-primary" download>
+            &#8595; Download Resume
+          </a>
+          <a href="#contact" class="btn-outline">Get In Touch</a>
+        </div>
+      </div>
+      <div>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-num"><span class="counter" data-target="10">0</span><span class="suf">+</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num"><span class="counter" data-target="20">0</span><span class="suf">+</span></div>
+            <div class="stat-label">Projects Delivered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num"><span class="counter" data-target="34">0</span><span class="suf">%</span></div>
+            <div class="stat-label">Reporting Efficiency Gain</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num"><span class="counter" data-target="97">0</span><span class="suf">%</span></div>
+            <div class="stat-label">Go-Live Stability Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-curve"></div>
+  </section>
+
+  <!-- ══ ABOUT ══ -->
+  <section id="about">
+    <div class="container">
+      <p class="s-eyebrow rv">Who I Am</p>
+      <h2 class="s-title rv">Bridging <span>Data &amp; Decisions</span></h2>
+      <div class="about-grid">
+        <div class="about-text rv">
+          <p>I'm a Senior Business Analyst with over a decade of experience translating complex operational data into service improvements that organizations can act on. My background spans digital transformation, migration projects, and regulatory compliance across high-volume customer-facing environments.</p>
+          <p>At Telus, I supported Customer Care and Customer Assurance teams &mdash; leading 20+ concurrent projects and designing Power BI dashboards that reduced reporting cycle times by 34%. I work best at the intersection of technical teams and business stakeholders, turning ambiguity into structured, evidence-based recommendations.</p>
+          <p>I'm currently open to <strong>Senior Business Analyst</strong> roles in public sector, technology, and telecommunications &mdash; particularly where data-driven service improvement is the mandate.</p>
+        </div>
+        <div class="highlights rv">
+          <div class="hl-item">
+            <div class="hl-icon">&#127963;</div>
+            <div>
+              <div class="hl-title">Public Sector Focus</div>
+              <div class="hl-sub">Targeting City of Toronto &amp; municipal roles</div>
+            </div>
+          </div>
+          <div class="hl-item">
+            <div class="hl-icon">&#127941;</div>
+            <div>
+              <div class="hl-title">ITIL&reg; 4 Certified</div>
+              <div class="hl-sub">IT Service Management &middot; Dec 2025</div>
+            </div>
+          </div>
+          <div class="hl-item">
+            <div class="hl-icon">&#128202;</div>
+            <div>
+              <div class="hl-title">Power BI Practitioner</div>
+              <div class="hl-sub">PL-300 certification in progress</div>
+            </div>
+          </div>
+          <div class="hl-item">
+            <div class="hl-icon">&#128101;</div>
+            <div>
+              <div class="hl-title">Cross-functional Leader</div>
+              <div class="hl-sub">120+ staff trained &middot; 12+ teams coordinated</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EXPERIENCE ══ -->
+  <section id="experience">
+    <div class="container">
+      <p class="s-eyebrow rv">Career History</p>
+      <h2 class="s-title rv">14 Years of <span>Delivery</span></h2>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-role">Senior Business Analyst</span>
+              <span class="exp-dates">Nov 2023 &ndash; Feb 2026</span>
+            </div>
+            <div class="exp-company">Telus &middot; Toronto, ON &nbsp;&mdash;&nbsp; <em style="color:var(--muted);font-weight:400">Position impacted by departmental reorganization</em></div>
+            <div class="exp-desc">Led BA and process improvement for Customer Care &amp; Customer Assurance teams, overseeing 20+ concurrent projects across digital transformation, migration, and compliance streams.</div>
+            <ul class="exp-ul">
+              <li><strong>Designed</strong> Power BI dashboards cutting reporting cycle time by 34% within 6 months across 4 service lines.</li>
+              <li><strong>Conducted</strong> business process reviews identifying 18+ improvement opportunities, raising first-contact resolution by 23% over 9 months.</li>
+              <li><strong>Coordinated</strong> requirements for Salesforce Lightning Migration and 11 additional projects, reducing rework cycles by 28%.</li>
+              <li><strong>Developed</strong> QA strategies and UAT documentation for 8+ implementations, achieving 97% go-live stability rate.</li>
+              <li><strong>Managed</strong> vendor relationships across 3 concurrent initiatives (GoNet, ServiceNow WFM, OROC Trunkdown) within approved budget parameters.</li>
+              <li><strong>Authored</strong> SOPs and training programs for 120+ Customer Care staff, reducing onboarding time by 19%.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-role">Business Analyst</span>
+              <span class="exp-dates">Nov 2021 &ndash; Nov 2023</span>
+            </div>
+            <div class="exp-company">Telus &middot; Toronto, ON</div>
+            <div class="exp-desc">Analyzed service incidents, policy impacts, and system requirements across migration, compliance, and analytics projects for enterprise customer operations.</div>
+            <ul class="exp-ul">
+              <li><strong>Identified</strong> recurring incident root causes and cut repeat escalations by 22% within 12 months.</li>
+              <li><strong>Developed</strong> Visio workflow models and requirements documentation for 6+ migration projects including 3G to LTE and Voicemail Migration.</li>
+              <li><strong>Contributed</strong> to data analytics initiatives (Incident Closure Code Audit, Insight Project), improving SLA compliance by 17% over 8 months.</li>
+              <li><strong>Delivered</strong> training to 80+ staff achieving 91% adoption rates within 60 days of go-live.</li>
+              <li><strong>Prepared</strong> policy impact assessments for regulatory compliance projects, ensuring legislative alignment and reducing audit exposure.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-role">Business Account Specialist</span>
+              <span class="exp-dates">Aug 2020 &ndash; Nov 2021</span>
+            </div>
+            <div class="exp-company">Telus &middot; Toronto, ON</div>
+            <ul class="exp-ul">
+              <li><strong>Grew</strong> portfolio revenue by 21% in 12 months through cross-sell strategy and Salesforce-driven lifecycle management.</li>
+              <li><strong>Improved</strong> account retention by 16% in 6 months through proactive issue resolution and structured client engagement.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-role">Business Account Executive</span>
+              <span class="exp-dates">Jan 2018 &ndash; Aug 2020</span>
+            </div>
+            <div class="exp-company">Bell Canada &middot; Toronto, ON</div>
+            <ul class="exp-ul">
+              <li><strong>Grew</strong> Smart Home service revenue by 28% quarterly over 18 months via solution-selling initiatives and stakeholder presentations.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-role">Senior Program Manager</span>
+              <span class="exp-dates">Jan 2016 &ndash; Nov 2017</span>
+            </div>
+            <div class="exp-company">Asus Inc. &middot; Tehran, Iran</div>
+            <ul class="exp-ul">
+              <li><strong>Expanded</strong> regional market performance by 8% through new product penetration and distributor collaboration, achieving 10%+ revenue growth quarterly.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-role">Project Manager</span>
+              <span class="exp-dates">Jan 2014 &ndash; Jan 2016</span>
+            </div>
+            <div class="exp-company">Vista Co. &middot; Tehran, Iran</div>
+            <ul class="exp-ul">
+              <li><strong>Delivered</strong> 100% of assigned projects on schedule through rigorous planning and proactive scope management.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-role">Business System Analyst</span>
+              <span class="exp-dates">Jun 2012 &ndash; Jan 2014</span>
+            </div>
+            <div class="exp-company">Satsa Co. &middot; Tehran, Iran</div>
+            <ul class="exp-ul">
+              <li><strong>Improved</strong> operational efficiency by 14% in 12 months by redesigning business workflows and optimizing resource allocation across project teams.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SKILLS ══ -->
+  <section id="skills">
+    <div class="container">
+      <p class="s-eyebrow rv">Capabilities</p>
+      <h2 class="s-title rv">Core <span>Skills</span></h2>
+      <div class="skills-grid rv">
+        <div class="skill-group">
+          <h3>Business Analysis</h3>
+          <div class="tags">
+            <span class="tag">Business Process Analysis</span>
+            <span class="tag">Requirements Gathering</span>
+            <span class="tag">Policy Development</span>
+            <span class="tag">Change Management</span>
+            <span class="tag">Impact Analysis</span>
+            <span class="tag">UAT &amp; QA</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Data &amp; Reporting</h3>
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">Data Visualization</span>
+            <span class="tag">Performance Metrics</span>
+            <span class="tag">SLA Reporting</span>
+            <span class="tag">Data Storytelling</span>
+            <span class="tag">Tableau</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Tools &amp; Technology</h3>
+          <div class="tags">
+            <span class="tag">Microsoft Office Suite</span>
+            <span class="tag">Visio</span>
+            <span class="tag">SharePoint</span>
+            <span class="tag">Salesforce CRM</span>
+            <span class="tag">Jira</span>
+            <span class="tag">ServiceNow</span>
+            <span class="tag">AI Analytics Tools</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Project &amp; Stakeholder</h3>
+          <div class="tags">
+            <span class="tag">Project Planning</span>
+            <span class="tag">Vendor Management</span>
+            <span class="tag">Stakeholder Engagement</span>
+            <span class="tag">Cross-functional Teams</span>
+            <span class="tag">Budget Tracking</span>
+            <span class="tag">Documentation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EDUCATION ══ -->
+  <section id="education">
+    <div class="container">
+      <p class="s-eyebrow rv">Credentials</p>
+      <h2 class="s-title rv">Education &amp; <span>Certifications</span></h2>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-type">Graduate Degree</div>
+          <div class="edu-degree">Master&rsquo;s in Urban Planning</div>
+          <div class="edu-school">Azad University, Tehran, Iran</div>
+          <span class="edu-year">2009 &ndash; 2011</span>
+        </div>
+        <div class="edu-card">
+          <div class="edu-type">Undergraduate Degree</div>
+          <div class="edu-degree">Bachelor of Science in Physics</div>
+          <div class="edu-school">Azad University, Iran</div>
+          <span class="edu-year">1998 &ndash; 2003</span>
+        </div>
+        <div class="edu-card">
+          <div class="edu-type">Certification</div>
+          <div class="edu-degree">ITIL&reg; 4 Foundation &mdash; IT Service Management</div>
+          <div class="edu-school">PeopleCert</div>
+          <span class="edu-year">Dec 2025</span>
+        </div>
+        <div class="edu-card">
+          <div class="edu-type">In Progress</div>
+          <div class="edu-degree">Microsoft Power BI (PL-300)</div>
+          <div class="edu-school">Completed prerequisite coursework</div>
+          <span class="edu-year">Actively Pursuing</span>
+        </div>
+        <div class="edu-card">
+          <div class="edu-type">Professional Training</div>
+          <div class="edu-degree">Project Management Professional Training</div>
+          <div class="edu-school">Industrial Management Institute, Tehran</div>
+          <span class="edu-year">2010</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section id="contact">
+    <div class="container">
+      <p class="s-eyebrow">Let&rsquo;s Connect</p>
+      <h2 class="s-title">Ready to <span>Talk?</span></h2>
+      <div class="contact-grid">
+        <div class="c-info">
+          <h3>Open to new opportunities</h3>
+          <p>I&rsquo;m actively exploring Senior Business Analyst roles in Toronto&rsquo;s public sector, technology, and telecommunications space. If your team values data-driven decisions and collaborative delivery, I&rsquo;d love to connect.</p>
+          <div class="c-links">
+            <a href="tel:6472818180" class="c-link">
+              <div class="c-icon">&#128222;</div>
+              647-281-8180
+            </a>
+            <a href="mailto:mehdimiladi@gmail.com" class="c-link">
+              <div class="c-icon">&#9993;</div>
+              mehdimiladi@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/mehdimiladi" target="_blank" rel="noopener" class="c-link">
+              <div class="c-icon">&#128279;</div>
+              linkedin.com/in/mehdimiladi
+            </a>
+          </div>
+        </div>
+        <div class="c-form-wrap">
+          <form id="contact-form">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="Jane Smith" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="jane@company.com" required>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="I&rsquo;d like to discuss an opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Send Message</button>
+          </form>
+          <div class="form-success" id="form-success">
+            <div class="ok">&#9989;</div>
+            <h4>Message Sent!</h4>
+            <p>Thanks for reaching out. Mehdi will get back to you shortly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Mehdi Miladi &middot; Senior Business Analyst &middot; Toronto, ON</p>
+  </footer>
+
+  <script>
+    (function () {
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var id = a.getAttribute('href');
+          if (id === '#') return;
+          e.preventDefault();
+          var el = document.querySelector(id);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      // Counter animation
+      function runCounter(el) {
+        var target = parseInt(el.getAttribute('data-target'));
+        var dur = 1400;
+        var tick = target / (dur / 16);
+        var cur = 0;
+        var t = setInterval(function () {
+          cur += tick;
+          if (cur >= target) { el.textContent = target; clearInterval(t); }
+          else el.textContent = Math.floor(cur);
+        }, 16);
+      }
+      setTimeout(function () {
+        document.querySelectorAll('.counter').forEach(runCounter);
+      }, 400);
+
+      // Intersection Observer for reveal animations
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.rv, .tl-item, .edu-card').forEach(function (el) {
+        io.observe(el);
+      });
+
+      // Contact form
+      document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        this.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      });
+    })();
+  </script>
+
+</body>
+</html>
