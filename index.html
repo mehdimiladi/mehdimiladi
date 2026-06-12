@@ -46,11 +46,8 @@ section{padding:5rem 2rem}
 #about{background:var(--w)}
 .ag{display:grid;grid-template-columns:260px 1fr;gap:4.5rem;align-items:start}
 .pc{display:flex;justify-content:center}
-.pr{width:220px;height:220px;border-radius:50%;background:var(--g5);border:1px solid var(--g4);display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;flex-direction:column;gap:.2rem;transition:border-color .2s}
-.pr:hover{border-color:var(--b)}
+.pr{width:220px;height:220px;border-radius:50%;background:var(--g5);border:1px solid var(--g4);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .pr img{width:100%;height:100%;object-fit:cover}
-.pi{font-size:3.2rem;font-weight:700;color:var(--g3);letter-spacing:-.02em}
-.pph{font-size:.62rem;color:var(--g3);letter-spacing:.08em;text-transform:uppercase}
 .at p{font-size:1rem;color:var(--g1);line-height:1.8;margin-bottom:.95rem}
 .at p strong{color:var(--k);font-weight:600}
 .aps{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.3rem}
@@ -206,9 +203,8 @@ footer p{font-size:.73rem;color:var(--g3)}
   <div class="ct">
     <div class="ag">
       <div class="pc rv">
-        <div class="pr" id="photo-ring" title="Click to upload your photo">
-          <div class="pi">MM</div>
-          <div class="pph">Click to upload photo</div>
+        <div class="pr">
+          <img src="photo.jpg" alt="Mehdi Miladi">
         </div>
       </div>
       <div class="at rv">
@@ -507,19 +503,6 @@ footer p{font-size:.73rem;color:var(--g3)}
     if(f&&s){f.style.display='none';s.style.display='block';}
   }
 
-  var ring=document.getElementById('photo-ring');
-  if(ring){
-    ring.addEventListener('click',function(){
-      var inp=document.createElement('input');inp.type='file';inp.accept='image/*';
-      inp.onchange=function(e){
-        var file=e.target.files[0];if(!file)return;
-        var r=new FileReader();
-        r.onload=function(ev){ring.innerHTML='';var img=document.createElement('img');img.src=ev.target.result;ring.appendChild(img);};
-        r.readAsDataURL(file);
-      };
-      inp.click();
-    });
-  }
 })();
 </script>
 </body>
