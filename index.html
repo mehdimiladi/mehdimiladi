@@ -1,766 +1,526 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mehdi Miladi — Senior Business Analyst | Toronto, ON</title>
-  <meta name="description" content="Senior Business Analyst with 10+ years driving process transformation and data-driven service improvement. Open to opportunities in public sector, telecom, and technology.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #0A1628;
-      --blue: #1D4ED8;
-      --orange: #F97316;
-      --white: #FFFFFF;
-      --off: #F8FAFC;
-      --text: #0F172A;
-      --muted: #64748B;
-      --bdr: #E2E8F0;
-    }
-    * { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--white); color: var(--text); line-height: 1.6; }
-
-    /* ── NAV ── */
-    nav {
-      position: sticky; top: 0; z-index: 50;
-      background: var(--navy);
-      padding: 0 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 60px;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .nav-logo {
-      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem;
-      color: #fff; letter-spacing: 0.05em; text-decoration: none;
-    }
-    .nav-ul { display: flex; gap: 1.75rem; list-style: none; }
-    .nav-ul a {
-      color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.79rem;
-      font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-ul a:hover { color: var(--orange); }
-    .nav-hire {
-      background: var(--orange); color: #fff !important;
-      padding: 0.38rem 0.95rem; border-radius: 4px;
-    }
-    .nav-hire:hover { opacity: 0.88; }
-    .nav-toggle {
-      display: none; background: none; border: none;
-      cursor: pointer; color: #fff; font-size: 1.5rem; line-height: 1;
-    }
-
-    /* ── HERO ── */
-    #hero {
-      background: var(--navy);
-      padding: 5rem 2rem 6rem;
-      position: relative; overflow: hidden;
-    }
-    .hero-grid-bg {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(29,78,216,0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(29,78,216,0.07) 1px, transparent 1px);
-      background-size: 56px 56px;
-      pointer-events: none;
-    }
-    .hero-curve {
-      position: absolute; bottom: -1px; left: 0; right: 0; height: 64px;
-      background: var(--white);
-      clip-path: ellipse(55% 100% at 50% 100%);
-    }
-    .hero-inner {
-      max-width: 1080px; margin: 0 auto;
-      display: grid; grid-template-columns: 1.1fr 0.9fr;
-      gap: 3rem; align-items: center;
-      position: relative; z-index: 1;
-    }
-    .hero-eyebrow {
-      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--orange);
-      margin-bottom: 1rem;
-      display: flex; align-items: center; gap: 0.5rem;
-    }
-    .hero-eyebrow::before {
-      content: ''; display: inline-block;
-      width: 24px; height: 2px; background: var(--orange);
-    }
-    .hero-name {
-      font-family: 'Syne', sans-serif; font-weight: 800;
-      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
-      color: #fff; line-height: 1; margin-bottom: 0.55rem;
-      letter-spacing: -0.02em;
-    }
-    .hero-title {
-      font-family: 'Syne', sans-serif; font-weight: 700;
-      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
-      color: var(--blue); letter-spacing: 0.07em;
-      text-transform: uppercase; margin-bottom: 1.25rem;
-    }
-    .hero-desc {
-      color: rgba(255,255,255,0.58); font-size: 0.975rem;
-      line-height: 1.75; margin-bottom: 1.9rem; max-width: 450px;
-    }
-    .hero-btns { display: flex; gap: 0.875rem; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--orange); color: #fff;
-      padding: 0.8rem 1.6rem; border-radius: 4px;
-      font-weight: 600; font-size: 0.875rem;
-      text-decoration: none; border: none; cursor: pointer;
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      letter-spacing: 0.02em;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(249,115,22,0.38); }
-    .btn-outline {
-      background: transparent; color: rgba(255,255,255,0.82);
-      padding: 0.8rem 1.6rem; border-radius: 4px;
-      font-weight: 600; font-size: 0.875rem;
-      text-decoration: none; border: 1.5px solid rgba(255,255,255,0.24); cursor: pointer;
-      letter-spacing: 0.02em;
-      transition: border-color 0.15s, background 0.15s;
-    }
-    .btn-outline:hover { border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.06); }
-    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-    .stat-card {
-      background: rgba(255,255,255,0.055);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px; padding: 1.3rem 1.2rem;
-      transition: background 0.2s;
-    }
-    .stat-card:hover { background: rgba(255,255,255,0.09); }
-    .stat-num {
-      font-family: 'Syne', sans-serif; font-weight: 800;
-      font-size: 2.2rem; color: #fff; line-height: 1; margin-bottom: 0.28rem;
-    }
-    .stat-num .suf { color: var(--orange); }
-    .stat-label {
-      font-size: 0.72rem; color: rgba(255,255,255,0.48);
-      text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500;
-    }
-
-    /* ── SHARED SECTION STYLES ── */
-    section { padding: 4.5rem 2rem; }
-    .container { max-width: 1080px; margin: 0 auto; }
-    .s-eyebrow {
-      font-size: 0.71rem; font-weight: 600; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--blue); margin-bottom: 0.38rem;
-    }
-    .s-title {
-      font-family: 'Syne', sans-serif; font-weight: 800;
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-      color: var(--text); line-height: 1.1;
-      margin-bottom: 2.5rem; letter-spacing: -0.02em;
-    }
-    .s-title span { color: var(--blue); }
-
-    /* ── ABOUT ── */
-    #about { background: var(--white); }
-    .about-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 3.5rem; align-items: start; }
-    .about-text p { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 0.95rem; }
-    .about-text p strong { color: var(--text); font-weight: 600; }
-    .highlights { display: flex; flex-direction: column; gap: 0.85rem; }
-    .hl-item {
-      display: flex; align-items: center; gap: 0.85rem;
-      padding: 0.85rem 1rem; background: var(--off);
-      border-radius: 6px; border-left: 3px solid var(--blue);
-    }
-    .hl-icon {
-      width: 32px; height: 32px;
-      background: rgba(29,78,216,0.1); border-radius: 5px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--blue); font-size: 1rem; flex-shrink: 0;
-    }
-    .hl-title { font-size: 0.865rem; font-weight: 600; color: var(--text); }
-    .hl-sub { font-size: 0.775rem; color: var(--muted); margin-top: 1px; }
-
-    /* ── EXPERIENCE ── */
-    #experience { background: var(--off); }
-    .timeline { position: relative; padding-left: 1.75rem; }
-    .timeline::before {
-      content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--blue) 0%, rgba(29,78,216,0.12) 100%);
-    }
-    .tl-item {
-      position: relative; padding-bottom: 2rem;
-      opacity: 0; transform: translateX(-16px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .tl-item.visible { opacity: 1; transform: translateX(0); }
-    .tl-dot {
-      position: absolute; left: -2.2rem; top: 0.42rem;
-      width: 11px; height: 11px; border-radius: 50%;
-      background: var(--blue); border: 2px solid var(--off);
-      box-shadow: 0 0 0 3px rgba(29,78,216,0.18);
-    }
-    .exp-card {
-      background: var(--white); border-radius: 8px;
-      padding: 1.35rem 1.4rem;
-      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
-      transition: box-shadow 0.2s;
-    }
-    .exp-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
-    .exp-head {
-      display: flex; justify-content: space-between;
-      align-items: flex-start; gap: 0.5rem; flex-wrap: wrap;
-      margin-bottom: 0.28rem;
-    }
-    .exp-role { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text); }
-    .exp-dates {
-      font-size: 0.775rem; color: var(--muted);
-      background: var(--off); padding: 0.2rem 0.65rem;
-      border-radius: 20px; white-space: nowrap; font-weight: 500;
-    }
-    .exp-company { font-size: 0.84rem; color: var(--blue); font-weight: 500; margin-bottom: 0.6rem; }
-    .exp-desc { font-size: 0.84rem; color: var(--muted); font-style: italic; margin-bottom: 0.75rem; line-height: 1.6; }
-    .exp-ul { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
-    .exp-ul li {
-      font-size: 0.84rem; color: var(--text); line-height: 1.6;
-      padding-left: 0.9rem; position: relative;
-    }
-    .exp-ul li::before {
-      content: ''; position: absolute; left: 0; top: 0.54em;
-      width: 4px; height: 4px; border-radius: 50%; background: var(--orange);
-    }
-    .exp-ul li strong { font-weight: 600; }
-
-    /* ── SKILLS ── */
-    #skills { background: var(--white); }
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.75rem; }
-    .skill-group h3 {
-      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.82rem;
-      color: var(--text); text-transform: uppercase; letter-spacing: 0.1em;
-      margin-bottom: 0.875rem; padding-bottom: 0.45rem;
-      border-bottom: 2px solid var(--blue);
-    }
-    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .tag {
-      background: var(--off); color: var(--text); font-size: 0.78rem; font-weight: 500;
-      padding: 0.3rem 0.65rem; border-radius: 4px; border: 1px solid var(--bdr);
-      cursor: default; transition: background 0.15s, color 0.15s, border-color 0.15s;
-    }
-    .tag:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
-
-    /* ── EDUCATION ── */
-    #education { background: var(--off); }
-    .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 1.2rem; }
-    .edu-card {
-      background: var(--white); border-radius: 8px; padding: 1.35rem;
-      border-top: 3px solid var(--blue);
-      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
-      opacity: 0; transform: translateY(14px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .edu-card.visible { opacity: 1; transform: translateY(0); }
-    .edu-type { font-size: 0.69rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--blue); margin-bottom: 0.38rem; }
-    .edu-degree { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.94rem; color: var(--text); margin-bottom: 0.22rem; line-height: 1.3; }
-    .edu-school { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.5rem; }
-    .edu-year {
-      font-size: 0.775rem; font-weight: 500; color: var(--muted);
-      background: var(--off); display: inline-block;
-      padding: 0.18rem 0.55rem; border-radius: 20px;
-    }
-
-    /* ── CONTACT ── */
-    #contact { background: var(--navy); padding-bottom: 5rem; }
-    #contact .s-title { color: #fff; }
-    #contact .s-title span { color: var(--orange); }
-    #contact .s-eyebrow { color: var(--orange); }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3.5rem; align-items: start; }
-    .c-info h3 { font-family: 'Syne', sans-serif; font-weight: 700; color: #fff; font-size: 1.15rem; margin-bottom: 0.7rem; }
-    .c-info p { color: rgba(255,255,255,0.53); font-size: 0.925rem; line-height: 1.75; margin-bottom: 1.75rem; }
-    .c-links { display: flex; flex-direction: column; gap: 0.65rem; }
-    .c-link {
-      display: flex; align-items: center; gap: 0.75rem;
-      color: rgba(255,255,255,0.68); font-size: 0.875rem;
-      text-decoration: none; transition: color 0.2s;
-    }
-    .c-link:hover { color: var(--orange); }
-    .c-icon {
-      width: 34px; height: 34px;
-      background: rgba(255,255,255,0.07); border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.05rem; flex-shrink: 0; transition: background 0.2s;
-    }
-    .c-link:hover .c-icon { background: rgba(249,115,22,0.2); }
-    .c-form-wrap {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px; padding: 1.75rem;
-    }
-    .form-group { margin-bottom: 1.1rem; }
-    .form-group label {
-      display: block; font-size: 0.73rem; font-weight: 500;
-      color: rgba(255,255,255,0.48); text-transform: uppercase;
-      letter-spacing: 0.1em; margin-bottom: 0.35rem;
-    }
-    .form-group input, .form-group textarea {
-      width: 100%;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 4px; padding: 0.7rem 0.9rem;
-      color: #fff; font-size: 0.875rem;
-      font-family: 'Inter', sans-serif; outline: none;
-      transition: border-color 0.2s;
-    }
-    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.27); }
-    .form-group input:focus, .form-group textarea:focus { border-color: var(--blue); }
-    .form-group textarea { min-height: 115px; resize: vertical; }
-    .form-success { display: none; text-align: center; padding: 2rem 1rem; }
-    .form-success .ok { font-size: 2.5rem; margin-bottom: 0.75rem; }
-    .form-success h4 { font-family: 'Syne', sans-serif; color: #fff; font-size: 1.15rem; margin-bottom: 0.4rem; }
-    .form-success p { color: rgba(255,255,255,0.5); font-size: 0.875rem; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #060e1a; padding: 1.25rem 2rem;
-      text-align: center; color: rgba(255,255,255,0.25); font-size: 0.775rem;
-    }
-
-    /* ── REVEAL ANIMATION ── */
-    .rv { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
-    .rv.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── MOBILE ── */
-    @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-stats { grid-template-columns: 1fr 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .nav-ul { display: none; flex-direction: column; gap: 0; position: absolute; top: 60px; left: 0; right: 0; background: var(--navy); padding: 1rem 2rem; border-top: 1px solid rgba(255,255,255,0.08); }
-      .nav-ul.open { display: flex; }
-      .nav-ul li { padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
-      .nav-toggle { display: block; }
-      .hero-name { font-size: 2.6rem; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mehdi Miladi — Senior Business Analyst</title>
+<meta name="description" content="Senior Business Analyst with 10+ years turning operational complexity into clarity. Open to roles in public sector, telecom, and technology — Toronto, ON.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--k:#1D1D1F;--g1:#424245;--g2:#6E6E73;--g3:#86868B;--g4:#D2D2D7;--g5:#F5F5F7;--w:#fff;--b:#0071E3;--bh:#0077ED;--br:rgba(0,0,0,0.1)}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--k);background:var(--w);-webkit-font-smoothing:antialiased;line-height:1.5}
+nav{position:sticky;top:0;z-index:100;height:48px;background:rgba(255,255,255,0.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.nl{font-size:.9rem;font-weight:600;color:var(--k);text-decoration:none;letter-spacing:-.01em}
+.nu{display:flex;gap:1.5rem;list-style:none}
+.nu a{font-size:.78rem;color:var(--g2);text-decoration:none;transition:color .2s}
+.nu a:hover{color:var(--k)}
+.nh{color:var(--b)!important;font-weight:500}
+.ntog{display:none;background:none;border:none;cursor:pointer;color:var(--k);font-size:1.4rem;line-height:1}
+#hero{min-height:93vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem 5.5rem;background:var(--w)}
+.he{font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--b);margin-bottom:1.5rem;opacity:0;animation:fu .65s .1s both}
+.hs{font-size:clamp(2.5rem,6vw,5rem);font-weight:700;letter-spacing:-.028em;line-height:1.04;color:var(--k);max-width:760px;margin:0 auto 1.2rem;opacity:0;animation:fu .65s .25s both}
+.hn{font-size:clamp(.95rem,1.8vw,1.15rem);font-weight:400;color:var(--g2);margin-bottom:2.75rem;opacity:0;animation:fu .65s .4s both}
+.hb{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:fu .65s .55s both}
+.bb{background:var(--b);color:#fff;padding:.72rem 1.5rem;border-radius:980px;font-size:.9rem;font-weight:500;text-decoration:none;border:none;cursor:pointer;display:inline-block;transition:background .2s,transform .15s}
+.bb:hover{background:var(--bh);transform:translateY(-1px)}
+.bs{background:rgba(0,0,0,0.06);color:var(--k);padding:.72rem 1.5rem;border-radius:980px;font-size:.9rem;font-weight:500;text-decoration:none;transition:background .2s}
+.bs:hover{background:rgba(0,0,0,0.1)}
+.hscr{margin-top:3.5rem;opacity:0;animation:fu .65s .8s both;display:flex;flex-direction:column;align-items:center;gap:.35rem}
+.hsl{width:1px;height:34px;background:linear-gradient(to bottom,var(--g4),transparent);margin:0 auto;animation:sla 1.8s ease-in-out infinite}
+.hst{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--g3)}
+@keyframes sla{0%,100%{opacity:1;transform:scaleY(1);transform-origin:top}50%{opacity:.35;transform:scaleY(.45);transform-origin:top}}
+#stats{background:var(--g5);padding:2.25rem 2rem;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06)}
+.sr{max-width:860px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:1rem}
+.sn{font-size:clamp(1.75rem,3.8vw,2.4rem);font-weight:700;letter-spacing:-.02em;color:var(--k)}
+.sn span{color:var(--b)}
+.sl2{font-size:.77rem;color:var(--g2);margin-top:.22rem}
+section{padding:5rem 2rem}
+.ct{max-width:1000px;margin:0 auto}
+.se2{font-size:.71rem;font-weight:500;color:var(--b);letter-spacing:.16em;text-transform:uppercase;margin-bottom:.6rem}
+.st{font-size:clamp(1.9rem,3.8vw,2.8rem);font-weight:700;letter-spacing:-.022em;line-height:1.06;color:var(--k);margin-bottom:.8rem}
+.ss{font-size:1rem;color:var(--g2);line-height:1.68;max-width:540px;margin-bottom:3rem}
+#about{background:var(--w)}
+.ag{display:grid;grid-template-columns:260px 1fr;gap:4.5rem;align-items:start}
+.pc{display:flex;justify-content:center}
+.pr{width:220px;height:220px;border-radius:50%;background:var(--g5);border:1px solid var(--g4);display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;flex-direction:column;gap:.2rem;transition:border-color .2s}
+.pr:hover{border-color:var(--b)}
+.pr img{width:100%;height:100%;object-fit:cover}
+.pi{font-size:3.2rem;font-weight:700;color:var(--g3);letter-spacing:-.02em}
+.pph{font-size:.62rem;color:var(--g3);letter-spacing:.08em;text-transform:uppercase}
+.at p{font-size:1rem;color:var(--g1);line-height:1.8;margin-bottom:.95rem}
+.at p strong{color:var(--k);font-weight:600}
+.aps{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.3rem}
+.ap{font-size:.77rem;color:var(--g2);padding:.3rem .82rem;border-radius:980px;border:1px solid var(--g4)}
+#projects{background:var(--g5)}
+.pfc{display:flex;flex-direction:column;gap:1.75rem}
+.pf{background:var(--w);border-radius:20px;border:1px solid rgba(0,0,0,0.08);overflow:hidden}
+.pfm{padding:2.25rem 2.25rem 0}
+.pfn{font-size:.68rem;font-weight:600;color:var(--b);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.45rem}
+.pft{font-size:1.4rem;font-weight:700;letter-spacing:-.018em;color:var(--k);margin-bottom:.38rem}
+.pfd{font-size:.9rem;color:var(--g2);line-height:1.65;max-width:500px;margin-bottom:.9rem}
+.pts{display:flex;gap:.38rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.ptag{font-size:.72rem;font-weight:500;color:var(--b);padding:.2rem .62rem;border-radius:980px;background:rgba(0,113,227,0.08)}
+.pmk{margin:0 2rem;border-radius:10px 10px 0 0;overflow:hidden;border:1px solid rgba(0,0,0,0.08);border-bottom:none}
+.mb{background:#E0E0E0;height:32px;display:flex;align-items:center;padding:0 10px;gap:5px}
+.md2{width:10px;height:10px;border-radius:50%}
+.md2.r{background:#FF5F57}.md2.y{background:#FFBD2E}.md2.g{background:#28C840}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:1.15rem;margin-top:1.75rem}
+.pc2{background:var(--w);border-radius:16px;padding:1.75rem;border:1px solid rgba(0,0,0,0.08)}
+.pcn{font-size:.68rem;font-weight:600;color:var(--b);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.4rem}
+.pct{font-size:1.05rem;font-weight:700;letter-spacing:-.015em;color:var(--k);margin-bottom:.4rem}
+.pcd{font-size:.875rem;color:var(--g2);line-height:1.62;margin-bottom:.85rem}
+.pcr{font-size:.82rem;font-weight:500;color:var(--k);padding:.42rem .82rem;background:var(--g5);border-radius:8px;display:inline-block}
+/* PBI mockup */
+.pbi-root{background:#F3F2F1;font-family:system-ui,sans-serif}
+.pbi-top{background:#252423;height:36px;display:flex;align-items:center;padding:0 12px;gap:8px}
+.pbi-logo{color:#F2C811;font-size:.72rem;font-weight:700;letter-spacing:.04em}
+.pbi-nav{display:flex;gap:1rem;margin-left:.75rem}
+.pbi-nav span{color:rgba(255,255,255,.5);font-size:.64rem}
+.pbi-body{padding:10px;display:grid;grid-template-columns:repeat(3,1fr) 1.8fr;gap:7px}
+.pk{background:#fff;border-radius:3px;padding:9px 11px;border-top:3px solid}
+.pk.b{border-color:#118DFF}.pk.g{border-color:#00B294}.pk.o{border-color:#E66C37}
+.pkv{font-size:1.4rem;font-weight:700;color:#252423;line-height:1}
+.pkl{font-size:.6rem;color:#605E5C;margin-top:2px;text-transform:uppercase;letter-spacing:.05em}
+.pkd{font-size:.64rem;margin-top:3px;font-weight:600;color:#00B294}
+.pbc{background:#fff;border-radius:3px;padding:9px 11px}
+.pbct{font-size:.62rem;font-weight:600;color:#252423;margin-bottom:5px;text-transform:uppercase;letter-spacing:.05em}
+.bars2{display:flex;align-items:flex-end;gap:3px;height:66px}
+.bar2{flex:1;border-radius:2px 2px 0 0;transform-origin:bottom;transform:scaleY(0);background:#118DFF;transition:transform .7s cubic-bezier(.4,0,.2,1)}
+/* Visio mockup */
+.vis-root{background:#fff;padding:14px;font-family:system-ui,sans-serif}
+.vt{font-size:.63rem;font-weight:600;color:#888;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.fn{opacity:0;transition:opacity .45s,transform .45s;transform:translateY(5px)}
+.fc{stroke-dasharray:150;stroke-dashoffset:150;transition:stroke-dashoffset .5s ease}
+/* Excel mockup */
+.xl-root{background:#fff;font-family:system-ui,sans-serif}
+.xlr{background:#217346;height:32px;display:flex;align-items:center;padding:0 12px;gap:10px}
+.xlr span{color:#fff;font-size:.68rem;opacity:.78}
+.xlr span.a{opacity:1;font-weight:600;border-bottom:2px solid rgba(255,255,255,.7);padding-bottom:1px}
+.xl-h{display:grid;background:#107C41;color:#fff;font-size:.62rem;font-weight:600}
+.xl-r{display:grid;border-bottom:.5px solid #EDEBE9;font-size:.64rem;opacity:0;transform:translateX(-5px);transition:opacity .35s,transform .35s}
+.xl-r.s{opacity:1;transform:translateX(0)}
+.xl-c{padding:4px 8px;border-right:.5px solid #EDEBE9;overflow:hidden;white-space:nowrap;color:#252423}
+.xl-c:first-child{background:#F3F2F1;font-weight:600}
+.chip2{display:inline-block;padding:1px 5px;border-radius:2px;font-size:.6rem;font-weight:600}
+.chip2.g{background:#E2EFDA;color:#375623}.chip2.y{background:#FFEB9C;color:#9C6500}.chip2.r{background:#FFDFE2;color:#9C0006}
+/* Skills */
+#skills{background:var(--w)}
+.skg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.75rem}
+.skc{font-size:.7rem;font-weight:500;color:var(--g3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:.55rem;border-bottom:1px solid var(--g4)}
+.ski{font-size:.93rem;color:var(--k);display:flex;align-items:center;gap:.6rem;margin-bottom:.55rem}
+.ski::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--b);flex-shrink:0}
+/* Experience */
+#experience{background:var(--g5)}
+.el{display:flex;flex-direction:column}
+.ee{padding:1.75rem 0;border-top:1px solid var(--g4);display:grid;grid-template-columns:.85fr 2fr;gap:2.5rem}
+.ee:last-child{border-bottom:1px solid var(--g4)}
+.eco{font-size:.77rem;color:var(--g2);font-weight:500}
+.ero{font-size:.94rem;font-weight:600;color:var(--k);margin:.2rem 0}
+.edt{font-size:.73rem;color:var(--g3)}
+.etx{font-size:.88rem;color:var(--g2);line-height:1.65}
+.eul{list-style:none;margin-top:.55rem;display:flex;flex-direction:column;gap:.25rem}
+.eul li{font-size:.84rem;color:var(--g1);line-height:1.55;padding-left:.82rem;position:relative}
+.eul li::before{content:'';position:absolute;left:0;top:.52em;width:3px;height:3px;border-radius:50%;background:var(--b)}
+/* Education */
+#education{background:var(--w)}
+.edug{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.9rem}
+.educ{background:var(--g5);border-radius:14px;padding:1.5rem;border:1px solid rgba(0,0,0,0.06)}
+.edut{font-size:.67rem;font-weight:500;color:var(--g3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.4rem}
+.edud{font-size:.95rem;font-weight:600;color:var(--k);margin-bottom:.2rem;line-height:1.3}
+.edus{font-size:.82rem;color:var(--g2);margin-bottom:.4rem}
+.eduy{font-size:.73rem;color:var(--g3)}
+/* Contact */
+#contact{background:var(--g5)}
+.cct{max-width:580px;margin:0 auto;text-align:center}
+.cct .ss{margin-left:auto;margin-right:auto}
+.cm{display:flex;flex-direction:column;gap:.65rem;text-align:left;margin-bottom:2rem}
+.cml{display:flex;align-items:center;gap:.82rem;color:var(--k);text-decoration:none;padding:.82rem 1rem;border-radius:12px;background:var(--w);border:1px solid var(--g4);transition:border-color .2s;font-size:.9rem}
+.cml:hover{border-color:var(--b)}
+.cmi{width:32px;height:32px;border-radius:8px;background:var(--g5);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem}
+.cfw{background:var(--w);border-radius:18px;padding:1.75rem;border:1px solid rgba(0,0,0,0.08);text-align:left}
+.fg{margin-bottom:.9rem}
+.fg label{display:block;font-size:.73rem;font-weight:500;color:var(--g2);margin-bottom:.3rem}
+.fg input,.fg textarea{width:100%;background:var(--g5);border:1px solid var(--g4);border-radius:8px;padding:.68rem .9rem;font-size:.9rem;color:var(--k);font-family:inherit;outline:none;transition:border-color .2s}
+.fg input:focus,.fg textarea:focus{border-color:var(--b);background:var(--w)}
+.fg textarea{min-height:105px;resize:vertical}
+.fsuc{display:none;text-align:center;padding:2rem}
+.fsuc .ok{font-size:2rem;margin-bottom:.5rem}
+.fsuc h4{font-size:.95rem;font-weight:600;color:var(--k);margin-bottom:.25rem}
+.fsuc p{font-size:.85rem;color:var(--g2)}
+footer{background:var(--w);padding:1.5rem 2rem;text-align:center;border-top:1px solid rgba(0,0,0,0.06)}
+footer p{font-size:.73rem;color:var(--g3)}
+@keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.rv.vis{opacity:1;transform:translateY(0)}
+@media(max-width:768px){
+  .ag,.ee{grid-template-columns:1fr;gap:1.5rem}
+  .pg,.sr{grid-template-columns:1fr 1fr}
+  .nu{display:none;flex-direction:column;gap:0;position:absolute;top:48px;left:0;right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);padding:.5rem 0;border-bottom:1px solid rgba(0,0,0,0.08)}
+  .nu.open{display:flex}
+  .nu li a{display:block;padding:.75rem 1.5rem;font-size:.9rem}
+  .ntog{display:block}
+  .pbi-body{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){.sr{grid-template-columns:1fr 1fr}.pg{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
-  <!-- ══ NAV ══ -->
-  <nav>
-    <a href="#" class="nav-logo">MM</a>
-    <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-ul').classList.toggle('open')">&#9776;</button>
-    <ul class="nav-ul">
-      <li><a href="#about" onclick="this.closest('.nav-ul').classList.remove('open')">About</a></li>
-      <li><a href="#experience" onclick="this.closest('.nav-ul').classList.remove('open')">Experience</a></li>
-      <li><a href="#skills" onclick="this.closest('.nav-ul').classList.remove('open')">Skills</a></li>
-      <li><a href="#education" onclick="this.closest('.nav-ul').classList.remove('open')">Education</a></li>
-      <li><a href="#contact" class="nav-hire" onclick="this.closest('.nav-ul').classList.remove('open')">Hire Me</a></li>
-    </ul>
-  </nav>
+<nav>
+  <a href="#" class="nl">Mehdi Miladi</a>
+  <button class="ntog" onclick="document.querySelector('.nu').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+  <ul class="nu">
+    <li><a href="#about" onclick="this.closest('.nu').classList.remove('open')">About</a></li>
+    <li><a href="#projects" onclick="this.closest('.nu').classList.remove('open')">Work</a></li>
+    <li><a href="#skills" onclick="this.closest('.nu').classList.remove('open')">Skills</a></li>
+    <li><a href="#experience" onclick="this.closest('.nu').classList.remove('open')">Experience</a></li>
+    <li><a href="#contact" class="nh" onclick="this.closest('.nu').classList.remove('open')">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- ══ HERO ══ -->
-  <section id="hero">
-    <div class="hero-grid-bg"></div>
-    <div class="hero-inner">
-      <div>
-        <p class="hero-eyebrow">Available for Hire &middot; Toronto, ON</p>
-        <h1 class="hero-name">Mehdi<br>Miladi</h1>
-        <p class="hero-title">Senior Business Analyst</p>
-        <p class="hero-desc">Data-driven analyst with 10+ years delivering process transformation, Power BI intelligence, and cross-functional project leadership across high-volume service operations.</p>
-        <div class="hero-btns">
-          <a href="Miladi_Resume.pdf" class="btn-primary" download>
-            &#8595; Download Resume
-          </a>
-          <a href="#contact" class="btn-outline">Get In Touch</a>
+<section id="hero">
+  <p class="he">Senior Business Analyst &middot; Toronto, ON</p>
+  <h1 class="hs">Turning operational complexity into clarity.</h1>
+  <p class="hn">Mehdi Miladi &mdash; Open to new opportunities</p>
+  <div class="hb">
+    <a href="Miladi_Resume.pdf" class="bb" download>Download Resume</a>
+    <a href="#contact" class="bs">Get in touch</a>
+  </div>
+  <div class="hscr"><div class="hsl"></div><span class="hst">Scroll</span></div>
+</section>
+
+<div id="stats">
+  <div class="sr">
+    <div><div class="sn"><span class="ctr2" data-v="10">0</span><span>+</span></div><div class="sl2">Years of experience</div></div>
+    <div><div class="sn"><span class="ctr2" data-v="20">0</span><span>+</span></div><div class="sl2">Projects delivered</div></div>
+    <div><div class="sn"><span class="ctr2" data-v="34">0</span><span>%</span></div><div class="sl2">Reporting efficiency gain</div></div>
+    <div><div class="sn"><span class="ctr2" data-v="97">0</span><span>%</span></div><div class="sl2">Go-live stability rate</div></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="ct">
+    <div class="ag">
+      <div class="pc rv">
+        <div class="pr" id="photo-ring" title="Click to upload your photo">
+          <div class="pi">MM</div>
+          <div class="pph">Click to upload photo</div>
         </div>
       </div>
-      <div>
-        <div class="hero-stats">
-          <div class="stat-card">
-            <div class="stat-num"><span class="counter" data-target="10">0</span><span class="suf">+</span></div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num"><span class="counter" data-target="20">0</span><span class="suf">+</span></div>
-            <div class="stat-label">Projects Delivered</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num"><span class="counter" data-target="34">0</span><span class="suf">%</span></div>
-            <div class="stat-label">Reporting Efficiency Gain</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num"><span class="counter" data-target="97">0</span><span class="suf">%</span></div>
-            <div class="stat-label">Go-Live Stability Rate</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-curve"></div>
-  </section>
-
-  <!-- ══ ABOUT ══ -->
-  <section id="about">
-    <div class="container">
-      <p class="s-eyebrow rv">Who I Am</p>
-      <h2 class="s-title rv">Bridging <span>Data &amp; Decisions</span></h2>
-      <div class="about-grid">
-        <div class="about-text rv">
-          <p>I'm a Senior Business Analyst with over a decade of experience translating complex operational data into service improvements that organizations can act on. My background spans digital transformation, migration projects, and regulatory compliance across high-volume customer-facing environments.</p>
-          <p>At Telus, I supported Customer Care and Customer Assurance teams &mdash; leading 20+ concurrent projects and designing Power BI dashboards that reduced reporting cycle times by 34%. I work best at the intersection of technical teams and business stakeholders, turning ambiguity into structured, evidence-based recommendations.</p>
-          <p>I'm currently open to <strong>Senior Business Analyst</strong> roles in public sector, technology, and telecommunications &mdash; particularly where data-driven service improvement is the mandate.</p>
-        </div>
-        <div class="highlights rv">
-          <div class="hl-item">
-            <div class="hl-icon">&#127963;</div>
-            <div>
-              <div class="hl-title">Public Sector Focus</div>
-              <div class="hl-sub">Targeting City of Toronto &amp; municipal roles</div>
-            </div>
-          </div>
-          <div class="hl-item">
-            <div class="hl-icon">&#127941;</div>
-            <div>
-              <div class="hl-title">ITIL&reg; 4 Certified</div>
-              <div class="hl-sub">IT Service Management &middot; Dec 2025</div>
-            </div>
-          </div>
-          <div class="hl-item">
-            <div class="hl-icon">&#128202;</div>
-            <div>
-              <div class="hl-title">Power BI Practitioner</div>
-              <div class="hl-sub">PL-300 certification in progress</div>
-            </div>
-          </div>
-          <div class="hl-item">
-            <div class="hl-icon">&#128101;</div>
-            <div>
-              <div class="hl-title">Cross-functional Leader</div>
-              <div class="hl-sub">120+ staff trained &middot; 12+ teams coordinated</div>
-            </div>
-          </div>
+      <div class="at rv">
+        <p class="se2">About me</p>
+        <h2 class="st">Analyst. Strategist.<br>Problem solver.</h2>
+        <p>I&rsquo;m a Senior Business Analyst with 10+ years of experience translating operational complexity into service improvements organizations can act on. My background spans digital transformation, migration projects, and regulatory compliance across high-volume customer-facing environments.</p>
+        <p>At Telus, I designed Power BI dashboards that cut reporting cycle times by 34%, led cross-functional teams across 20+ concurrent projects, and coordinated requirements for large-scale Salesforce and network migrations. I work best connecting technical teams and business stakeholders &mdash; turning ambiguity into structure and structure into results.</p>
+        <p>Currently open to <strong>Senior BA</strong> roles in public sector, technology, and telecommunications.</p>
+        <div class="aps">
+          <span class="ap">ITIL&reg; 4 Certified</span>
+          <span class="ap">Power BI &middot; PL-300 in progress</span>
+          <span class="ap">Public sector focused</span>
+          <span class="ap">Toronto, ON</span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ══ EXPERIENCE ══ -->
-  <section id="experience">
-    <div class="container">
-      <p class="s-eyebrow rv">Career History</p>
-      <h2 class="s-title rv">14 Years of <span>Delivery</span></h2>
-      <div class="timeline">
+<section id="projects">
+  <div class="ct">
+    <p class="se2 rv">Selected work</p>
+    <h2 class="st rv">Projects that moved the needle.</h2>
+    <div class="pfc">
 
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="exp-card">
-            <div class="exp-head">
-              <span class="exp-role">Senior Business Analyst</span>
-              <span class="exp-dates">Nov 2023 &ndash; Feb 2026</span>
+      <!-- PBI -->
+      <div class="pf rv" data-anim="pbi">
+        <div class="pfm">
+          <div class="pfn">Project 01</div>
+          <div class="pft">Operational Performance Dashboard</div>
+          <div class="pfd">Designed a Power BI reporting suite for Customer Care leadership, replacing manual Excel reporting with real-time operational KPIs across 4 service lines &mdash; cutting reporting cycle time by 34%.</div>
+          <div class="pts"><span class="ptag">Power BI</span><span class="ptag">DAX</span><span class="ptag">KPI Design</span><span class="ptag">Telus &middot; 2024</span></div>
+        </div>
+        <div class="pmk">
+          <div class="mb"><div class="md2 r"></div><div class="md2 y"></div><div class="md2 g"></div></div>
+          <div class="pbi-root">
+            <div class="pbi-top"><span class="pbi-logo">&#9646; Power BI</span><div class="pbi-nav"><span>Home</span><span>Insert</span><span>View</span></div></div>
+            <div class="pbi-body">
+              <div class="pk b"><div class="pkv" id="kv1">0%</div><div class="pkl">First contact resolution</div><div class="pkd">&#8593; 23% vs prior period</div></div>
+              <div class="pk g"><div class="pkv" id="kv2">0%</div><div class="pkl">SLA compliance rate</div><div class="pkd">&#8593; 17% improvement</div></div>
+              <div class="pk o"><div class="pkv" id="kv3">0%</div><div class="pkl">Go-live stability</div><div class="pkd">&#8593; Q3 target exceeded</div></div>
+              <div class="pbc"><div class="pbct">FCR trend &mdash; monthly</div>
+                <div class="bars2" id="bars">
+                  <div class="bar2" style="height:55%"></div><div class="bar2" style="height:62%"></div>
+                  <div class="bar2" style="height:57%"></div><div class="bar2" style="height:69%"></div>
+                  <div class="bar2" style="height:74%"></div><div class="bar2" style="height:79%"></div>
+                  <div class="bar2" style="height:84%"></div><div class="bar2" style="height:82%"></div>
+                  <div class="bar2" style="height:90%"></div>
+                </div>
+              </div>
             </div>
-            <div class="exp-company">Telus &middot; Toronto, ON &nbsp;&mdash;&nbsp; <em style="color:var(--muted);font-weight:400">Position impacted by departmental reorganization</em></div>
-            <div class="exp-desc">Led BA and process improvement for Customer Care &amp; Customer Assurance teams, overseeing 20+ concurrent projects across digital transformation, migration, and compliance streams.</div>
-            <ul class="exp-ul">
-              <li><strong>Designed</strong> Power BI dashboards cutting reporting cycle time by 34% within 6 months across 4 service lines.</li>
-              <li><strong>Conducted</strong> business process reviews identifying 18+ improvement opportunities, raising first-contact resolution by 23% over 9 months.</li>
-              <li><strong>Coordinated</strong> requirements for Salesforce Lightning Migration and 11 additional projects, reducing rework cycles by 28%.</li>
-              <li><strong>Developed</strong> QA strategies and UAT documentation for 8+ implementations, achieving 97% go-live stability rate.</li>
-              <li><strong>Managed</strong> vendor relationships across 3 concurrent initiatives (GoNet, ServiceNow WFM, OROC Trunkdown) within approved budget parameters.</li>
-              <li><strong>Authored</strong> SOPs and training programs for 120+ Customer Care staff, reducing onboarding time by 19%.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="exp-card">
-            <div class="exp-head">
-              <span class="exp-role">Business Analyst</span>
-              <span class="exp-dates">Nov 2021 &ndash; Nov 2023</span>
-            </div>
-            <div class="exp-company">Telus &middot; Toronto, ON</div>
-            <div class="exp-desc">Analyzed service incidents, policy impacts, and system requirements across migration, compliance, and analytics projects for enterprise customer operations.</div>
-            <ul class="exp-ul">
-              <li><strong>Identified</strong> recurring incident root causes and cut repeat escalations by 22% within 12 months.</li>
-              <li><strong>Developed</strong> Visio workflow models and requirements documentation for 6+ migration projects including 3G to LTE and Voicemail Migration.</li>
-              <li><strong>Contributed</strong> to data analytics initiatives (Incident Closure Code Audit, Insight Project), improving SLA compliance by 17% over 8 months.</li>
-              <li><strong>Delivered</strong> training to 80+ staff achieving 91% adoption rates within 60 days of go-live.</li>
-              <li><strong>Prepared</strong> policy impact assessments for regulatory compliance projects, ensuring legislative alignment and reducing audit exposure.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="exp-card">
-            <div class="exp-head">
-              <span class="exp-role">Business Account Specialist</span>
-              <span class="exp-dates">Aug 2020 &ndash; Nov 2021</span>
-            </div>
-            <div class="exp-company">Telus &middot; Toronto, ON</div>
-            <ul class="exp-ul">
-              <li><strong>Grew</strong> portfolio revenue by 21% in 12 months through cross-sell strategy and Salesforce-driven lifecycle management.</li>
-              <li><strong>Improved</strong> account retention by 16% in 6 months through proactive issue resolution and structured client engagement.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="exp-card">
-            <div class="exp-head">
-              <span class="exp-role">Business Account Executive</span>
-              <span class="exp-dates">Jan 2018 &ndash; Aug 2020</span>
-            </div>
-            <div class="exp-company">Bell Canada &middot; Toronto, ON</div>
-            <ul class="exp-ul">
-              <li><strong>Grew</strong> Smart Home service revenue by 28% quarterly over 18 months via solution-selling initiatives and stakeholder presentations.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="exp-card">
-            <div class="exp-head">
-              <span class="exp-role">Senior Program Manager</span>
-              <span class="exp-dates">Jan 2016 &ndash; Nov 2017</span>
-            </div>
-            <div class="exp-company">Asus Inc. &middot; Tehran, Iran</div>
-            <ul class="exp-ul">
-              <li><strong>Expanded</strong> regional market performance by 8% through new product penetration and distributor collaboration, achieving 10%+ revenue growth quarterly.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="exp-card">
-            <div class="exp-head">
-              <span class="exp-role">Project Manager</span>
-              <span class="exp-dates">Jan 2014 &ndash; Jan 2016</span>
-            </div>
-            <div class="exp-company">Vista Co. &middot; Tehran, Iran</div>
-            <ul class="exp-ul">
-              <li><strong>Delivered</strong> 100% of assigned projects on schedule through rigorous planning and proactive scope management.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="exp-card">
-            <div class="exp-head">
-              <span class="exp-role">Business System Analyst</span>
-              <span class="exp-dates">Jun 2012 &ndash; Jan 2014</span>
-            </div>
-            <div class="exp-company">Satsa Co. &middot; Tehran, Iran</div>
-            <ul class="exp-ul">
-              <li><strong>Improved</strong> operational efficiency by 14% in 12 months by redesigning business workflows and optimizing resource allocation across project teams.</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ SKILLS ══ -->
-  <section id="skills">
-    <div class="container">
-      <p class="s-eyebrow rv">Capabilities</p>
-      <h2 class="s-title rv">Core <span>Skills</span></h2>
-      <div class="skills-grid rv">
-        <div class="skill-group">
-          <h3>Business Analysis</h3>
-          <div class="tags">
-            <span class="tag">Business Process Analysis</span>
-            <span class="tag">Requirements Gathering</span>
-            <span class="tag">Policy Development</span>
-            <span class="tag">Change Management</span>
-            <span class="tag">Impact Analysis</span>
-            <span class="tag">UAT &amp; QA</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>Data &amp; Reporting</h3>
-          <div class="tags">
-            <span class="tag">Power BI</span>
-            <span class="tag">Data Visualization</span>
-            <span class="tag">Performance Metrics</span>
-            <span class="tag">SLA Reporting</span>
-            <span class="tag">Data Storytelling</span>
-            <span class="tag">Tableau</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>Tools &amp; Technology</h3>
-          <div class="tags">
-            <span class="tag">Microsoft Office Suite</span>
-            <span class="tag">Visio</span>
-            <span class="tag">SharePoint</span>
-            <span class="tag">Salesforce CRM</span>
-            <span class="tag">Jira</span>
-            <span class="tag">ServiceNow</span>
-            <span class="tag">AI Analytics Tools</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>Project &amp; Stakeholder</h3>
-          <div class="tags">
-            <span class="tag">Project Planning</span>
-            <span class="tag">Vendor Management</span>
-            <span class="tag">Stakeholder Engagement</span>
-            <span class="tag">Cross-functional Teams</span>
-            <span class="tag">Budget Tracking</span>
-            <span class="tag">Documentation</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ══ EDUCATION ══ -->
-  <section id="education">
-    <div class="container">
-      <p class="s-eyebrow rv">Credentials</p>
-      <h2 class="s-title rv">Education &amp; <span>Certifications</span></h2>
-      <div class="edu-grid">
-        <div class="edu-card">
-          <div class="edu-type">Graduate Degree</div>
-          <div class="edu-degree">Master&rsquo;s in Urban Planning</div>
-          <div class="edu-school">Azad University, Tehran, Iran</div>
-          <span class="edu-year">2009 &ndash; 2011</span>
+      <!-- VISIO -->
+      <div class="pf rv" data-anim="vis">
+        <div class="pfm">
+          <div class="pfn">Project 02</div>
+          <div class="pft">Service Request Management Flow</div>
+          <div class="pfd">Redesigned the end-to-end service incident workflow for enterprise customers, mapping responsibilities across 3 teams and eliminating 4 redundant handoff steps &mdash; reducing repeat escalations by 22%.</div>
+          <div class="pts"><span class="ptag">Visio</span><span class="ptag">Process Mapping</span><span class="ptag">Workflow Design</span><span class="ptag">Telus &middot; 2023</span></div>
         </div>
-        <div class="edu-card">
-          <div class="edu-type">Undergraduate Degree</div>
-          <div class="edu-degree">Bachelor of Science in Physics</div>
-          <div class="edu-school">Azad University, Iran</div>
-          <span class="edu-year">1998 &ndash; 2003</span>
-        </div>
-        <div class="edu-card">
-          <div class="edu-type">Certification</div>
-          <div class="edu-degree">ITIL&reg; 4 Foundation &mdash; IT Service Management</div>
-          <div class="edu-school">PeopleCert</div>
-          <span class="edu-year">Dec 2025</span>
-        </div>
-        <div class="edu-card">
-          <div class="edu-type">In Progress</div>
-          <div class="edu-degree">Microsoft Power BI (PL-300)</div>
-          <div class="edu-school">Completed prerequisite coursework</div>
-          <span class="edu-year">Actively Pursuing</span>
-        </div>
-        <div class="edu-card">
-          <div class="edu-type">Professional Training</div>
-          <div class="edu-degree">Project Management Professional Training</div>
-          <div class="edu-school">Industrial Management Institute, Tehran</div>
-          <span class="edu-year">2010</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ CONTACT ══ -->
-  <section id="contact">
-    <div class="container">
-      <p class="s-eyebrow">Let&rsquo;s Connect</p>
-      <h2 class="s-title">Ready to <span>Talk?</span></h2>
-      <div class="contact-grid">
-        <div class="c-info">
-          <h3>Open to new opportunities</h3>
-          <p>I&rsquo;m actively exploring Senior Business Analyst roles in Toronto&rsquo;s public sector, technology, and telecommunications space. If your team values data-driven decisions and collaborative delivery, I&rsquo;d love to connect.</p>
-          <div class="c-links">
-            <a href="tel:6472818180" class="c-link">
-              <div class="c-icon">&#128222;</div>
-              647-281-8180
-            </a>
-            <a href="mailto:mehdimiladi@gmail.com" class="c-link">
-              <div class="c-icon">&#9993;</div>
-              mehdimiladi@gmail.com
-            </a>
-            <a href="https://linkedin.com/in/mehdimiladi" target="_blank" rel="noopener" class="c-link">
-              <div class="c-icon">&#128279;</div>
-              linkedin.com/in/mehdimiladi
-            </a>
-          </div>
-        </div>
-        <div class="c-form-wrap">
-          <form id="contact-form">
-            <div class="form-group">
-              <label>Your Name</label>
-              <input type="text" placeholder="Jane Smith" required>
-            </div>
-            <div class="form-group">
-              <label>Email Address</label>
-              <input type="email" placeholder="jane@company.com" required>
-            </div>
-            <div class="form-group">
-              <label>Message</label>
-              <textarea placeholder="I&rsquo;d like to discuss an opportunity..." required></textarea>
-            </div>
-            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Send Message</button>
-          </form>
-          <div class="form-success" id="form-success">
-            <div class="ok">&#9989;</div>
-            <h4>Message Sent!</h4>
-            <p>Thanks for reaching out. Mehdi will get back to you shortly.</p>
+        <div class="pmk">
+          <div class="mb"><div class="md2 r"></div><div class="md2 y"></div><div class="md2 g"></div></div>
+          <div class="vis-root">
+            <div class="vt">Service Request Management &middot; Swimlane Process Flow</div>
+            <svg width="100%" viewBox="0 0 600 170" xmlns="http://www.w3.org/2000/svg">
+              <defs><marker id="va" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#0078D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+              <rect x="0" y="0" width="600" height="53" fill="#EFF6FF"/><rect x="0" y="58" width="600" height="53" fill="#F0FFF4"/><rect x="0" y="116" width="600" height="54" fill="#FFFBEB"/>
+              <line x1="0" y1="55" x2="600" y2="55" stroke="#E2E8F0" stroke-width="0.5"/><line x1="0" y1="113" x2="600" y2="113" stroke="#E2E8F0" stroke-width="0.5"/>
+              <text x="6" y="28" font-size="8" fill="#1D4ED8" font-weight="600" font-family="system-ui">CUSTOMER</text>
+              <text x="6" y="86" font-size="8" fill="#15803D" font-weight="600" font-family="system-ui">SUPPORT</text>
+              <text x="6" y="144" font-size="8" fill="#B45309" font-weight="600" font-family="system-ui">TECHNICAL</text>
+              <g class="fn" id="fn0"><rect x="60" y="13" width="80" height="27" rx="4" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1"/><text x="100" y="30" text-anchor="middle" font-size="8" fill="#1E40AF" font-family="system-ui" font-weight="500">Submit Request</text></g>
+              <line class="fc" id="fc0" x1="140" y1="26" x2="166" y2="26" stroke="#0078D4" stroke-width="1.5" fill="none"/>
+              <line class="fc" id="fc0b" x1="166" y1="26" x2="166" y2="71" stroke="#0078D4" stroke-width="1.5" fill="none" marker-end="url(#va)"/>
+              <g class="fn" id="fn1"><rect x="128" y="71" width="80" height="27" rx="4" fill="#DCFCE7" stroke="#22C55E" stroke-width="1"/><text x="168" y="88" text-anchor="middle" font-size="8" fill="#166534" font-family="system-ui" font-weight="500">Triage &amp; Log</text></g>
+              <line class="fc" id="fc1" x1="208" y1="84" x2="242" y2="84" stroke="#0078D4" stroke-width="1.5" fill="none" marker-end="url(#va)"/>
+              <g class="fn" id="fn2"><rect x="244" y="71" width="80" height="27" rx="4" fill="#DCFCE7" stroke="#22C55E" stroke-width="1"/><text x="284" y="88" text-anchor="middle" font-size="8" fill="#166534" font-family="system-ui" font-weight="500">Assign &amp; Route</text></g>
+              <line class="fc" id="fc2" x1="284" y1="98" x2="284" y2="128" stroke="#0078D4" stroke-width="1.5" fill="none" marker-end="url(#va)"/>
+              <g class="fn" id="fn3"><rect x="244" y="128" width="80" height="27" rx="4" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/><text x="284" y="145" text-anchor="middle" font-size="8" fill="#92400E" font-family="system-ui" font-weight="500">Investigate</text></g>
+              <line class="fc" id="fc3" x1="324" y1="141" x2="385" y2="141" stroke="#0078D4" stroke-width="1.5" fill="none"/>
+              <line class="fc" id="fc3b" x1="385" y1="141" x2="385" y2="84" stroke="#0078D4" stroke-width="1.5" fill="none" marker-end="url(#va)"/>
+              <g class="fn" id="fn4"><rect x="356" y="71" width="80" height="27" rx="4" fill="#DCFCE7" stroke="#22C55E" stroke-width="1"/><text x="396" y="88" text-anchor="middle" font-size="8" fill="#166534" font-family="system-ui" font-weight="500">Verify &amp; Close</text></g>
+              <line class="fc" id="fc4" x1="396" y1="71" x2="396" y2="38" stroke="#0078D4" stroke-width="1.5" fill="none" marker-end="url(#va)"/>
+              <g class="fn" id="fn5"><rect x="356" y="13" width="80" height="27" rx="4" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1"/><text x="396" y="30" text-anchor="middle" font-size="8" fill="#1E40AF" font-family="system-ui" font-weight="500">Confirmed &#10003;</text></g>
+            </svg>
           </div>
         </div>
       </div>
+
+      <!-- EXCEL -->
+      <div class="pf rv" data-anim="xl">
+        <div class="pfm">
+          <div class="pfn">Project 03</div>
+          <div class="pft">Project Portfolio Tracker</div>
+          <div class="pfd">Built a structured Excel tracking model used across 20+ concurrent initiatives, enabling leadership to monitor delivery status, risk, and budget variance in a single view &mdash; replacing 3 separate spreadsheets.</div>
+          <div class="pts"><span class="ptag">Excel</span><span class="ptag">Data Modeling</span><span class="ptag">Portfolio Management</span><span class="ptag">Telus &middot; 2023&ndash;2026</span></div>
+        </div>
+        <div class="pmk">
+          <div class="mb"><div class="md2 r"></div><div class="md2 y"></div><div class="md2 g"></div></div>
+          <div class="xl-root">
+            <div class="xlr"><span class="a">Home</span><span>Insert</span><span>Data</span><span>View</span></div>
+            <div id="xlbody">
+              <div class="xl-h" style="grid-template-columns:145px 82px 108px 80px 72px 82px">
+                <div class="xl-c">Project Name</div><div class="xl-c">Owner</div><div class="xl-c">Phase</div><div class="xl-c">Due Date</div><div class="xl-c">Budget</div><div class="xl-c">Status</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
 
-  <footer>
-    <p>&copy; 2026 Mehdi Miladi &middot; Senior Business Analyst &middot; Toronto, ON</p>
-  </footer>
+    <div class="pg rv">
+      <div class="pc2"><div class="pcn">Project 04</div><div class="pct">Salesforce Lightning Migration</div><div class="pcd">Led end-to-end requirements and stakeholder coordination for migration from Salesforce Classic to Lightning, supporting 500+ Customer Care agents.</div><span class="pcr">&#8595;&nbsp;28% rework reduction</span></div>
+      <div class="pc2"><div class="pcn">Project 05</div><div class="pct">3G to LTE Network Migration</div><div class="pcd">Developed business requirements and impact analysis for decommissioning 3G infrastructure and migrating enterprise IoT and wireless customers to LTE.</div><span class="pcr">Zero unplanned service outages</span></div>
+    </div>
+  </div>
+</section>
 
-  <script>
-    (function () {
-      // Smooth scroll
-      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-        a.addEventListener('click', function (e) {
-          var id = a.getAttribute('href');
-          if (id === '#') return;
-          e.preventDefault();
-          var el = document.querySelector(id);
-          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
+<section id="skills">
+  <div class="ct">
+    <p class="se2 rv">Capabilities</p>
+    <h2 class="st rv">A complete toolkit.<br>Applied with intent.</h2>
+    <div class="skg rv">
+      <div><div class="skc">Business Analysis</div><div class="ski">Process Analysis &amp; Improvement</div><div class="ski">Requirements Gathering</div><div class="ski">Policy Development</div><div class="ski">Change Management</div><div class="ski">Impact Analysis</div><div class="ski">UAT &amp; Quality Assurance</div></div>
+      <div><div class="skc">Data &amp; Reporting</div><div class="ski">Power BI &amp; DAX</div><div class="ski">Data Visualization</div><div class="ski">Performance Metrics</div><div class="ski">SLA Reporting</div><div class="ski">Data Storytelling</div><div class="ski">Tableau</div></div>
+      <div><div class="skc">Tools &amp; Technology</div><div class="ski">Microsoft Office Suite</div><div class="ski">Visio &amp; SharePoint</div><div class="ski">Salesforce CRM</div><div class="ski">Jira &amp; ServiceNow</div><div class="ski">AI Analytics Tools</div><div class="ski">Monday.com &amp; Asana</div></div>
+      <div><div class="skc">Leadership</div><div class="ski">Stakeholder Engagement</div><div class="ski">Vendor Management</div><div class="ski">Cross-functional Teams</div><div class="ski">Project Planning</div><div class="ski">Budget Tracking</div><div class="ski">Executive Reporting</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="ct">
+    <p class="se2 rv">Career</p>
+    <h2 class="st rv">14 years. One consistent thread.</h2>
+    <div class="el rv">
+      <div class="ee"><div><div class="eco">Telus</div><div class="ero">Senior Business Analyst</div><div class="edt">Nov 2023 &ndash; Feb 2026</div></div><div><div class="etx">Led BA and process improvement for Customer Care &amp; Customer Assurance teams, overseeing 20+ concurrent projects across digital transformation, migration, and compliance.</div><ul class="eul"><li>Designed Power BI dashboards reducing reporting cycle time by 34% within 6 months.</li><li>Conducted process reviews raising first-contact resolution by 23% over 9 months.</li><li>Coordinated requirements for 12+ technology projects including Salesforce Lightning Migration.</li></ul></div></div>
+      <div class="ee"><div><div class="eco">Telus</div><div class="ero">Business Analyst</div><div class="edt">Nov 2021 &ndash; Nov 2023</div></div><div><div class="etx">Analyzed service incidents, policy impacts, and system requirements across migration, compliance, and analytics projects.</div><ul class="eul"><li>Identified root causes cutting repeat escalations by 22% in 12 months.</li><li>Developed workflow models and requirements docs for 6+ migration projects.</li></ul></div></div>
+      <div class="ee"><div><div class="eco">Telus</div><div class="ero">Business Account Specialist</div><div class="edt">Aug 2020 &ndash; Nov 2021</div></div><div><div class="etx">Consulted SMB clients on Wireline and Wireless solutions. Grew portfolio revenue by 21% in 12 months via Salesforce-driven lifecycle management.</div></div></div>
+      <div class="ee"><div><div class="eco">Bell Canada</div><div class="ero">Business Account Executive</div><div class="edt">Jan 2018 &ndash; Aug 2020</div></div><div><div class="etx">Managed full sales cycle for cloud and Smart Home services across 150+ accounts. Grew revenue 28% quarterly over 18 months.</div></div></div>
+      <div class="ee"><div><div class="eco">Asus Inc. &middot; Tehran</div><div class="ero">Senior Program Manager</div><div class="edt">Jan 2016 &ndash; Nov 2017</div></div><div><div class="etx">Led multi-regional product launch programs. Expanded market performance by 8%, achieving 10%+ revenue growth quarterly.</div></div></div>
+      <div class="ee"><div><div class="eco">Vista Co. &middot; Tehran</div><div class="ero">Project Manager</div><div class="edt">Jan 2014 &ndash; Jan 2016</div></div><div><div class="etx">Managed end-to-end technology project delivery. Delivered 100% of projects on schedule through proactive scope management.</div></div></div>
+      <div class="ee"><div><div class="eco">Satsa Co. &middot; Tehran</div><div class="ero">Business System Analyst</div><div class="edt">Jun 2012 &ndash; Jan 2014</div></div><div><div class="etx">Designed business process solutions for enterprise clients. Improved operational efficiency by 14% in 12 months.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="ct">
+    <p class="se2 rv">Credentials</p>
+    <h2 class="st rv">Always learning.</h2>
+    <div class="edug rv">
+      <div class="educ"><div class="edut">Graduate Degree</div><div class="edud">Master&rsquo;s in Urban Planning</div><div class="edus">Azad University, Tehran</div><div class="eduy">2009 &ndash; 2011</div></div>
+      <div class="educ"><div class="edut">Undergraduate</div><div class="edud">BSc in Physics</div><div class="edus">Azad University, Iran</div><div class="eduy">1998 &ndash; 2003</div></div>
+      <div class="educ"><div class="edut">Certification</div><div class="edud">ITIL&reg; 4 Foundation</div><div class="edus">IT Service Management &middot; PeopleCert</div><div class="eduy">Dec 2025</div></div>
+      <div class="educ"><div class="edut">In Progress</div><div class="edud">Microsoft Power BI (PL-300)</div><div class="edus">Prerequisite coursework complete</div><div class="eduy">Actively pursuing</div></div>
+      <div class="educ"><div class="edut">Training</div><div class="edud">Project Management Professional</div><div class="edus">Industrial Management Institute, Tehran</div><div class="eduy">2010</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="ct">
+    <div class="cct">
+      <p class="se2 rv">Contact</p>
+      <h2 class="st rv">Let&rsquo;s talk.</h2>
+      <p class="ss rv">Open to Senior BA roles across public sector, technology, and telecommunications in the Greater Toronto Area.</p>
+      <div class="cm rv">
+        <a href="https://linkedin.com/in/mehdimiladi" target="_blank" rel="noopener" class="cml"><div class="cmi">&#128279;</div>linkedin.com/in/mehdimiladi</a>
+      </div>
+      <div class="cfw rv">
+        <!-- FORMSPREE: Replace YOUR_FORM_ID below after signing up at formspree.io -->
+        <form id="cform" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="fg"><label>Name</label><input type="text" placeholder="Jane Smith" required></div>
+          <div class="fg"><label>Email</label><input type="email" placeholder="jane@company.com" required></div>
+          <div class="fg"><label>Message</label><textarea placeholder="I&rsquo;d like to discuss an opportunity..." required></textarea></div>
+          <button type="submit" class="bb" style="width:100%;border-radius:8px;padding:.75rem">Send message</button>
+        </form>
+        <div class="fsuc" id="fsuc"><div class="ok">&#10003;</div><h4>Message sent</h4><p>Mehdi will be in touch shortly.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><p>&copy; 2026 Mehdi Miladi &middot; Senior Business Analyst &middot; Toronto, ON</p></footer>
+
+<script>
+(function(){
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href');
+      if(id==='#')return;
+      e.preventDefault();
+      var el=document.querySelector(id);
+      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+
+  setTimeout(function(){
+    document.querySelectorAll('.ctr2').forEach(function(el){
+      var target=parseInt(el.dataset.v);
+      var tick=target/(1400/16);var cur=0;
+      var t=setInterval(function(){cur+=tick;if(cur>=target){el.textContent=target;clearInterval(t);}else el.textContent=Math.floor(cur);},16);
+    });
+  },350);
+
+  var pbiDone=false,visDone=false,xlDone=false;
+
+  function animatePBI(){
+    if(pbiDone)return;pbiDone=true;
+    [['kv1',78,'%'],['kv2',94,'%'],['kv3',97,'%']].forEach(function(item,i){
+      setTimeout(function(){
+        var el=document.getElementById(item[0]);if(!el)return;
+        var c=0,target=item[1],sfx=item[2];
+        var t=setInterval(function(){c++;el.textContent=c+sfx;if(c>=target)clearInterval(t);},16);
+      },i*200);
+    });
+    setTimeout(function(){
+      document.querySelectorAll('.bar2').forEach(function(b,i){
+        setTimeout(function(){b.style.transform='scaleY(1)';},i*75);
       });
+    },300);
+  }
 
-      // Counter animation
-      function runCounter(el) {
-        var target = parseInt(el.getAttribute('data-target'));
-        var dur = 1400;
-        var tick = target / (dur / 16);
-        var cur = 0;
-        var t = setInterval(function () {
-          cur += tick;
-          if (cur >= target) { el.textContent = target; clearInterval(t); }
-          else el.textContent = Math.floor(cur);
-        }, 16);
+  function animateVis(){
+    if(visDone)return;visDone=true;
+    document.querySelectorAll('.fn').forEach(function(n,i){
+      setTimeout(function(){n.style.opacity='1';n.style.transform='translateY(0)';},i*230);
+    });
+    document.querySelectorAll('.fc').forEach(function(c,i){
+      setTimeout(function(){c.style.strokeDashoffset='0';},180+i*160);
+    });
+  }
+
+  function animateXL(){
+    if(xlDone)return;xlDone=true;
+    var data=[
+      ['Salesforce Migration','M. Miladi','Implementation','Mar 2024','$245K','g:On Track'],
+      ['3G to LTE Shutdown','J. Chen','Closure','Feb 2024','$380K','g:Complete'],
+      ['ServiceNow WFM','A. Patel','Testing','Apr 2024','$120K','y:In Review'],
+      ['GoNet Compliance','M. Miladi','Analysis','May 2024','$95K','g:On Track'],
+      ['Power BI Dashboard','M. Miladi','Live','Jan 2024','$40K','g:Complete'],
+      ['BwHSIA 5G Launch','R. Kim','Discovery','Jun 2024','$280K','r:At Risk'],
+    ];
+    var cols='145px 82px 108px 80px 72px 82px';
+    var body=document.getElementById('xlbody');if(!body)return;
+    data.forEach(function(row,i){
+      setTimeout(function(){
+        var div=document.createElement('div');
+        div.className='xl-r';div.style.gridTemplateColumns=cols;
+        row.forEach(function(cell,ci){
+          var d=document.createElement('div');d.className='xl-c';
+          if(ci===5){var parts=cell.split(':');var chip=document.createElement('span');chip.className='chip2 '+parts[0];chip.textContent=parts[1];d.appendChild(chip);}
+          else d.textContent=cell;
+          div.appendChild(d);
+        });
+        body.appendChild(div);
+        requestAnimationFrame(function(){requestAnimationFrame(function(){div.classList.add('s');});});
+      },i*175);
+    });
+  }
+
+  var animMap={pbi:animatePBI,vis:animateVis,xl:animateXL};
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('vis');
+        var anim=e.target.dataset.anim;
+        if(anim&&animMap[anim])animMap[anim]();
+        io.unobserve(e.target);
       }
-      setTimeout(function () {
-        document.querySelectorAll('.counter').forEach(runCounter);
-      }, 400);
+    });
+  },{threshold:0.12});
 
-      // Intersection Observer for reveal animations
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.1 });
+  document.querySelectorAll('.rv,.pf').forEach(function(el){io.observe(el);});
 
-      document.querySelectorAll('.rv, .tl-item, .edu-card').forEach(function (el) {
-        io.observe(el);
-      });
-
-      // Contact form
-      document.getElementById('contact-form').addEventListener('submit', function (e) {
+  var cform=document.getElementById('cform');
+  if(cform){
+    cform.addEventListener('submit',function(e){
+      var action=cform.getAttribute('action');
+      if(!action||action.indexOf('YOUR_FORM_ID')>-1){
         e.preventDefault();
-        this.style.display = 'none';
-        document.getElementById('form-success').style.display = 'block';
-      });
-    })();
-  </script>
+        cform.style.display='none';
+        document.getElementById('fsuc').style.display='block';
+      }
+    });
+  }
+  if(window.location.search.indexOf('success')>-1){
+    var f=document.getElementById('cform');
+    var s=document.getElementById('fsuc');
+    if(f&&s){f.style.display='none';s.style.display='block';}
+  }
 
+  var ring=document.getElementById('photo-ring');
+  if(ring){
+    ring.addEventListener('click',function(){
+      var inp=document.createElement('input');inp.type='file';inp.accept='image/*';
+      inp.onchange=function(e){
+        var file=e.target.files[0];if(!file)return;
+        var r=new FileReader();
+        r.onload=function(ev){ring.innerHTML='';var img=document.createElement('img');img.src=ev.target.result;ring.appendChild(img);};
+        r.readAsDataURL(file);
+      };
+      inp.click();
+    });
+  }
+})();
+</script>
 </body>
 </html>
